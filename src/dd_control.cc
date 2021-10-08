@@ -37,7 +37,7 @@ namespace gazebo_plugins
             this->model = model;
             this->ros_node_ = gazebo_ros::Node::Get(sdf);
             this->vel_sub = this->ros_node_->create_subscription<std_msgs::msg::Float64MultiArray>(
-                "topic",
+                "ddbot/vel",
                 10,
                 std::bind(&DDControl::topic_callback, this, std::placeholders::_1));
 
