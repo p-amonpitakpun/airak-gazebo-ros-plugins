@@ -7,7 +7,7 @@
 
             <collision name='collision'>
                 <geometry>
-                    <box>   
+                    <box>
                         <size>.4 .2 .1</size>
                     </box>
                 </geometry>
@@ -92,7 +92,17 @@
             </visual>
         </link>
 
-        <joint type="revolute" name="left_wheel_hinge">
+        <include>
+            <uri>model://kinect_ros</uri>
+            <pose>0.2 0 0.2 0 0 0</pose>
+        </include>
+
+        <joint name="kinect_joint" type="fixed">
+            <child>kinect_ros::link</child>
+            <parent>chassis</parent>
+        </joint>
+
+        <joint name="left_wheel_hinge" type="revolute">
             <pose>0 0 -0.03 0 0 0</pose>
             <child>left_wheel</child>
             <parent>chassis</parent>
@@ -101,7 +111,7 @@
             </axis>
         </joint>
 
-        <joint type="revolute" name="right_wheel_hinge">
+        <joint name="right_wheel_hinge" type="revolute">
             <pose>0 0 0.03 0 0 0</pose>
             <child>right_wheel</child>
             <parent>chassis</parent>
@@ -109,7 +119,7 @@
                 <xyz>0 1 0</xyz>
             </axis>
         </joint>
-        
+
         <plugin name="ddbot" filename="libdd_control.so"/>
     </model>
 </sdf>
