@@ -8,12 +8,13 @@ prerequisite
 
 Clone the repository
 ```Shell
-$ mkdir -p ros2_ws/src
+$ mkdir -p ~/ros2_ws/src
 $ git clone https://github.com/p-amonpitakpub/airak_gazebo_ros_plugins.git
 ```
 
 build the package with colcon
 ```Shell
+$ cd ~/ros2_ws
 $ colcon build --symlink-install 
 ```
 
@@ -24,7 +25,7 @@ $ export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/ros2_ws/src/airak_gazebo_ros_plu
 
 start gazebo with
 ```shell
-$ cd airak_gazebo_ros_plugins
+$ cd ~/ros2_ws/src/airak_gazebo_ros_plugins
 $ gazebo world/demo_ddbot.world
 ```
 
