@@ -5,8 +5,11 @@ prerequisite
   - gazebo
   - gazebo_ros_pkgs
 
+
+Clone the repository
 ```Shell
 $ mkdir -p ros2_ws/src
+$ git clone https://github.com/p-amonpitakpub/airak_gazebo_ros_plugins.git
 ```
 
 build the package with colcon
