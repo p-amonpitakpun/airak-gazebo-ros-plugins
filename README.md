@@ -1,4 +1,4 @@
-# airak-gazebo-ros-plugins
+# airak_robot_sim
 
 prerequisite
   - ros foxy
